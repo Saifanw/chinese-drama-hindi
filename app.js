@@ -3,12 +3,13 @@ import { getFirestore, collection, addDoc, query, where, orderBy, onSnapshot, se
 
 /* Replace these values with your Firebase Web App config. */
 const firebaseConfig = {
-  apiKey: "PASTE_YOUR_FIREBASE_API_KEY",
-  authDomain: "PASTE_YOUR_FIREBASE_AUTH_DOMAIN",
-  projectId: "PASTE_YOUR_FIREBASE_PROJECT_ID",
-  storageBucket: "PASTE_YOUR_FIREBASE_STORAGE_BUCKET",
-  messagingSenderId: "PASTE_YOUR_FIREBASE_MESSAGING_SENDER_ID",
-  appId: "PASTE_YOUR_FIREBASE_APP_ID"
+  apiKey: "AIzaSyA7VbQHAlWSTPL87WBjqs-pK4u6XX6BCek",
+  authDomain: "chinese-drama-hindi.firebaseapp.com",
+  projectId: "chinese-drama-hindi",
+  storageBucket: "chinese-drama-hindi.firebasestorage.app",
+  messagingSenderId: "677390828297",
+  appId: "1:677390828297:web:d236cd65bb67af48dfc9d8",
+  measurementId: "G-L7TTL6JXLM"
 };
 
 const videos = [
@@ -73,7 +74,7 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
 
 let db=null;
 try{
-  if(!firebaseConfig.apiKey.startsWith("PASTE_")){
+  if(firebaseConfig.apiKey && firebaseConfig.projectId){
     const app=initializeApp(firebaseConfig); db=getFirestore(app);
   }
 }catch(err){console.warn("Firebase not configured:",err)}

@@ -1,0 +1,10 @@
+FIREBASE CONNECTED UPDATE — Chinese Drama Hindi
+
+1. In Firebase Console, create Firestore Database (if not already created).
+2. Open Firestore Database > Rules. Paste the contents of firestore.rules.txt and click Publish.
+3. Upload/replace app.js in your GitHub Pages repository with this version.
+4. Keep the current index.html and style.css. Existing website UI uses the app.js module.
+5. Test: open the site, open the video card, post a test comment. It should appear and persist on reload.
+6. On first query, Firestore may show a link to create a composite index for collection comments with videoId ascending and createdAt descending. Click the provided link and create the index, then wait for it to finish.
+7. Public anonymous comments can attract spam. These rules limit field names and lengths but do not provide rate limiting, profanity moderation, CAPTCHA, or abuse prevention. Add App Check or a trusted backend before broad public promotion.
+8. Firebase web config is designed to be included in client apps; protect data with Firestore Security Rules. Do not add service account/private keys to frontend code.
