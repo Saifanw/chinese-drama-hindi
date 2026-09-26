@@ -2,17 +2,81 @@
 <html lang="hi">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Chinese Drama Hindi | Hindi Dubbed Chinese Dramas & Episodes</title>
-<meta name="description" content="Chinese dramas ke Hindi titles, story, episode guide aur authorized Hindi dubbed ya official streaming links ek jagah par dekhein.">
-<meta name="robots" content="index,follow"><link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+<title>Chinese Drama Hindi | Hindi Dubbed Chinese Dramas</title>
+<meta name="description" content="Chinese dramas Hindi mein dekhein. Hindi aur English titles, search, filters, videos aur public comments — sab ek hi website par.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://YOUR-USERNAME.github.io/YOUR-REPO/">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header><a class="brand" href="index.html">Chinese Drama Hindi</a><nav><a href="index.html">Home</a><a href="#catalog">Dramas</a><a href="#about">About</a></nav></header>
+<header class="site-header">
+  <div class="wrap nav-wrap">
+    <a class="logo" href="./">Chinese Drama <span>Hindi</span></a>
+    <nav><a href="#videos">Videos</a><a href="#categories">Categories</a></nav>
+  </div>
+</header>
+
 <main>
-<section class="hero"><p class="eyebrow">Hindi Drama Discovery</p><h1>Chinese Dramas, Hindi Mein Discover Karein</h1><p>Hindi titles, drama details, episode guides aur official viewing links ek jagah.</p><input id="search" type="search" placeholder="Drama ka Hindi ya original naam search karein…" aria-label="Search dramas"></section>
-<section id="catalog"><h2>Drama Catalogue</h2><p class="muted">Demo card ko apne licensed/official drama details se replace karein.</p><div class="cards" id="cards"></div></section>
-<section id="about" class="about"><h2>About this website</h2><p>Yeh discovery guide hai. Videos, posters, dubbing aur subtitles sirf tab publish karein jab aapke paas unke rights ya permission ho. Official platform par dekhne ke liye authorized links use karein.</p></section>
-</main><footer>© <span id="year"></span> Chinese Drama Hindi · Fan discovery guide; not affiliated with studios or platforms.</footer>
-<script src="app.js"></script>
-</body></html>
+<section class="hero wrap">
+  <div>
+    <p class="eyebrow">Hindi Dubbed Chinese Dramas</p>
+    <h1>Chinese Dramas Hindi Mein</h1>
+    <p class="hero-text">Popular Chinese dramas ko Hindi aur English titles ke saath easily search karein aur videos isi website par dekhein.</p>
+  </div>
+</section>
+
+<section class="toolbar wrap" id="videos">
+  <div class="search-box"><span>⌕</span><input id="search" type="search" placeholder="Drama search karein…"></div>
+  <div class="filters">
+    <button class="filter active" data-filter="all">All</button>
+    <button class="filter" data-filter="romance">Romance</button>
+    <button class="filter" data-filter="action">Action</button>
+    <button class="filter" data-filter="time-travel">Time Travel</button>
+    <button class="filter" data-filter="system">System</button>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="section-head"><h2>Latest Videos</h2><span id="count"></span></div>
+  <div class="video-grid" id="videoGrid"></div>
+  <p id="empty" class="empty" hidden>No video found.</p>
+</section>
+
+<section class="wrap categories" id="categories">
+  <h2>Browse by category</h2>
+  <div class="category-row">
+    <button class="category" data-filter="romance">❤️ Romance</button>
+    <button class="category" data-filter="action">⚔️ Action</button>
+    <button class="category" data-filter="time-travel">⏳ Time Travel</button>
+    <button class="category" data-filter="system">⚡ System</button>
+  </div>
+</section>
+</main>
+
+<div class="modal" id="videoModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <button class="close" data-close aria-label="Close">×</button>
+    <div id="playerWrap"></div>
+    <div class="modal-info">
+      <div class="tags" id="modalTags"></div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalEnglish" class="english"></p>
+      <p id="modalDescription"></p>
+      <section class="comments">
+        <h3>Comments <span id="commentCount"></span></h3>
+        <form id="commentForm">
+          <div class="comment-fields"><input id="commentName" maxlength="50" required placeholder="Your name"><button type="submit">Post Comment</button></div>
+          <textarea id="commentText" maxlength="1000" required rows="3" placeholder="Apna comment likhein…"></textarea>
+          <p id="commentStatus" class="status"></p>
+        </form>
+        <div id="commentsList"></div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<footer><div class="wrap">© <span id="year"></span> Chinese Drama Hindi</div></footer>
+<script type="module" src="app.js"></script>
+</body>
+</html>
